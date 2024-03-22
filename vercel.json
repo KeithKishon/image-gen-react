@@ -1,6 +1,14 @@
 {
-    "rewrites": [
-        { "source": "/api/(.*)", "destination": "http://localhost:8000/api/$1" },
-        { "source": "/(.*)", "destination": "/frontend/build/$1" }
+    "builds": [
+      {
+        "src": "db.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "db.py"
+      }
     ]
-}
+  }
