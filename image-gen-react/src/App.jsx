@@ -20,7 +20,7 @@ function App() {
         const nextIndex = prevIndex + 1;
         return nextIndex % images.length; // Ensure nextIndex wraps around images.length
       });
-    }, 9000); // Adjusted interval to 9000 milliseconds (9 seconds)
+    }, 900000); // Adjusted interval to 9000 milliseconds (9 seconds)
 
     // Set loading to false after 9 seconds
     // setTimeout(() => {
@@ -39,7 +39,7 @@ function App() {
           headers: { "Content-Type": "application/json" },
         });
         console.log("Fetch complete");
-    
+        
         const data = await response.json();
         console.log('Fetched audio URLs:', data);
         setAudioUrls(data.message); // Update this line to set the audio URLs from the data
